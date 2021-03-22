@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>login</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="assets/img/favicon.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="assets/vendor/venobox/venobox.css" rel="stylesheet">
+    <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="assets/css/style.css" rel="stylesheet">
+</head>
+<style>
+    @charset "UTF-8";
+    body {
+        background: #e9e9e9;
+        color: #666666;
+        font-family: "RobotoDraft", "Roboto", sans-serif;
+        font-size: 14px;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+    /* switch */
+    
+    .login_option {
+        display: flex;
+        justify-content: space-between;
+        width: 240px;
+        margin: auto;
+    }
+    
+    .login_option label {
+        display: inline-block;
+        margin-bottom: .5rem;
+        font-size: 20px;
+        font-weight: 700;
+    }
+    
+    .switch {
+        position: relative;
+        display: inline-block;
+        width: 60px;
+        height: 34px;
+    }
+    
+    .switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+    
+    .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #1acc9c;
+        -webkit-transition: .4s;
+        transition: .4s;
+    }
+    
+    .slider:before {
+        position: absolute;
+        content: "";
+        height: 26px;
+        width: 26px;
+        left: 4px;
+        bottom: 4px;
+        background-color: white;
+        -webkit-transition: .4s;
+        transition: .4s;
+    }
+    
+    input:checked+.slider {
+        background-color: #181b92;
+    }
+    
+    input:focus+.slider {
+        box-shadow: 0 0 1px #181b92;
+    }
+    
+    input:checked+.slider:before {
+        -webkit-transform: translateX(26px);
+        -ms-transform: translateX(26px);
+        transform: translateX(26px);
+    }
+    /* Rounded sliders */
+    
+    .slider.round {
+        border-radius: 34px;
+    }
+    
+    .slider.round:before {
+        border-radius: 50%;
+    }
+    /* switch */
+    
+    .myContainer {
+        width: 500px;
+        margin: auto;
+    }
+    /* Pen Title */
+    
+    .pen-title {
+        padding: 50px 0;
+        text-align: center;
+        letter-spacing: 2px;
+    }
+    
+    .pen-title h1 {
+        margin: 0 0 20px;
+        font-size: 48px;
+        font-weight: 300;
+    }
+    
+    .pen-title span {
+        font-size: 12px;
+    }
+    
+    .pen-title span .fa {
+        color: #181b92;
+    }
+    
+    .pen-title span a {
+        color: #181b92;
+        font-weight: 600;
+        text-decoration: none;
+    }
+    /* Rerun */
+    
+    .rerun {
+        margin: 0 0 30px;
+        text-align: center;
+    }
+    
+    .rerun a {
+        cursor: pointer;
+        display: inline-block;
+        background: #181b92;
+        border-radius: 3px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+        padding: 10px 20px;
+        color: #ffffff;
+        text-decoration: none;
+        transition: 0.3s ease;
+    }
+    
+    .rerun a:hover {
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    }
+    /* Scroll To Bottom */
+    /* Container */
+    
+    .container {
+        position: relative;
+        width: 100%;
+    }
+    
+    .container.active .card:first-child {
+        background: #f2f2f2;
+        margin: 0 15px;
+    }
+    
+    .container.active .card:nth-child(2) {
+        background: #fafafa;
+        margin: 0 10px;
+    }
+    
+    .container.active .card.alt .title,
+    .container.active .card.alt .input-container,
+    .container.active .card.alt .button-container {
+        left: 0;
+        opacity: 1;
+        visibility: visible;
+        transition: 0.3s ease;
+    }
+    
+    .container.active .card.alt .title {
+        transition-delay: 0.3s;
+    }
+    
+    .container.active .card.alt .input-container {
+        transition-delay: 0.4s;
+    }
+    
+    .container.active .card.alt .input-container:nth-child(2) {
+        transition-delay: 0.5s;
+    }
+    
+    .container.active .card.alt .input-container:nth-child(3) {
+        transition-delay: 0.6s;
+    }
+    
+    .container.active .card.alt .button-container {
+        transition-delay: 0.7s;
+    }
+    /* Card */
+    
+    .card {
+        position: relative;
+        background: #ffffff;
+        border-radius: 5px;
+        padding: 60px 0 40px 0;
+        box-sizing: border-box;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+        transition: 0.3s ease;
+        /* Title */
+        /* Inputs */
+        /* Button */
+        /* Footer */
+        /* Alt Card */
+    }
+    
+    .card:first-child {
+        background: #fafafa;
+        height: 10px;
+        border-radius: 5px 5px 0 0;
+        margin: 0 10px;
+        padding: 0;
+    }
+    
+    .card .title {
+        position: relative;
+        z-index: 1;
+        border-left: 5px solid #181b92;
+        margin: 0 0 35px;
+        padding: 10px 0 10px 50px;
+        color: #1acc8d;
+        font-size: 32px;
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+    
+    .card .input-container {
+        position: relative;
+        margin: 0 60px 50px;
+    }
+    
+    .card .input-container input {
+        outline: none;
+        z-index: 1;
+        position: relative;
+        background: none;
+        width: 100%;
+        height: 60px;
+        border: 0;
+        color: #1acc8d;
+        font-size: 24px;
+        font-weight: 400;
+    }
+    
+    .card .input-container input:focus~label {
+        color: #9d9d9d;
+        transform: translate(-12%, -50%) scale(0.75);
+    }
+    
+    .card .input-container input:focus~.bar:before,
+    .card .input-container input:focus~.bar:after {
+        width: 50%;
+    }
+    
+    .card .input-container input:valid~label {
+        color: #9d9d9d;
+        transform: translate(-12%, -50%) scale(0.75);
+    }
+    
+    .card .input-container label {
+        position: absolute;
+        top: 0;
+        left: 0;
+        color: #757575;
+        font-size: 24px;
+        font-weight: 300;
+        line-height: 60px;
+        transition: 0.2s ease;
+    }
+    
+    .card .input-container .bar {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        background: #757575;
+        width: 100%;
+        height: 1px;
+    }
+    
+    .card .input-container .bar:before,
+    .card .input-container .bar:after {
+        content: "";
+        position: absolute;
+        background: #181b92;
+        width: 0;
+        height: 2px;
+        transition: 0.2s ease;
+    }
+    
+    .card .input-container .bar:before {
+        left: 50%;
+    }
+    
+    .card .input-container .bar:after {
+        right: 50%;
+    }
+    
+    .card .button-container {
+        margin: 0 60px;
+        text-align: center;
+    }
+    
+    .card .button-container button {
+        outline: 0;
+        cursor: pointer;
+        position: relative;
+        display: inline-block;
+        background: 0;
+        width: 240px;
+        border: 2px solid #1acc8d;
+        padding: 20px 0;
+        border-radius: 40px;
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 1;
+        text-transform: uppercase;
+        overflow: hidden;
+        transition: 0.3s ease;
+    }
+    
+    .card .button-container button:hover span,
+    .card .button-container button:active span,
+    .card .button-container button:focus span {
+        color: #1acc8d !important;
+    }
+    
+    .card .button-container button:hover,
+    .card .button-container button:active,
+    .card .button-container button:focus {
+        border-color: #181b92;
+    }
+    
+    .card .button-container button span {
+        position: relative;
+        z-index: 1;
+        color: #181b92;
+        transition: 0.3s ease;
+    }
+    
+    .card .button-container button:before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        display: block;
+        background: #181b92;
+        width: 30px;
+        height: 30px;
+        border-radius: 100%;
+        margin: -15px 0 0 -15px;
+        opacity: 0;
+        transition: 0.3s ease;
+    }
+    
+    .card .button-container button:hover,
+    .card .button-container button:active,
+    .card .button-container button:focus {
+        border-color: #181b92;
+    }
+    
+    .card .button-container button:hover span,
+    .card .button-container button:active span,
+    .card .button-container button:focus span {
+        color: #181b92;
+    }
+    
+    .card .button-container button:active span,
+    .card .button-container button:focus span {
+        color: #ffffff;
+    }
+    
+    .card .button-container button:active:before,
+    .card .button-container button:focus:before {
+        opacity: 1;
+        transform: scale(10);
+    }
+    
+    .card .footer {
+        margin: 40px 0 0;
+        color: #d3d3d3;
+        font-size: 24px;
+        font-weight: 300;
+        text-align: center;
+    }
+    
+    .card .footer a {
+        text-decoration: none;
+        color: gray;
+        transition: 0.3s ease;
+    }
+    
+    .card .footer a:hover {
+        color: #bababa;
+    }
+    /* Keyframes */
+    
+    @-webkit-keyframes buttonFadeInUp {
+        0% {
+            bottom: 30px;
+            opacity: 0;
+        }
+    }
+    
+    @keyframes buttonFadeInUp {
+        0% {
+            bottom: 30px;
+            opacity: 0;
+        }
+    }
+</style>
+
+<body>
+
+    <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top d-flex align-items-center ">
+        <div class="container d-flex align-items-center">
+
+            <div class="logo mr-auto">
+                <h1 class="text-light"><a href="index.html"><span>pineapple</span></a></h1>
+                <!-- Uncomment below if you prefer to use an image logo -->
+                <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+            </div>
+
+            <nav class="nav-menu d-none d-lg-block">
+                <ul>
+                    <!-- <li class="active"><a href="index.html">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#team">Team</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
+                    <li class="drop-down"><a href="">Drop Down</a>
+                        <ul>
+                            <li><a href="#">Drop Down 1</a></li>
+                            <li class="drop-down"><a href="#">Drop Down 2</a>
+                                <ul>
+                                    <li><a href="#">Deep Drop Down 1</a></li>
+                                    <li><a href="#">Deep Drop Down 2</a></li>
+                                    <li><a href="#">Deep Drop Down 3</a></li>
+                                    <li><a href="#">Deep Drop Down 4</a></li>
+                                    <li><a href="#">Deep Drop Down 5</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Drop Down 3</a></li>
+                            <li><a href="#">Drop Down 4</a></li>
+                            <li><a href="#">Drop Down 5</a></li>
+                        </ul>
+                    </li> -->
+                    <li><a href="#contact">Support</a></li>
+
+                </ul>
+            </nav>
+            <!-- .nav-menu -->
+
+        </div>
+    </header>
+    <!-- End Header -->
+
+    <main id="main">
+
+        <!-- ======= Breadcrumbs Section ======= -->
+        <section class="breadcrumbs">
+
+            <div class="container">
+                <div class="myContainer">
+                    <div class="card"></div>
+                    <div class="card">
+                        <h1 class="title">Login</h1>
+                        <div class="container">
+
+                            <div class="login_option">
+                                <label for=""> Admin </label>
+                                <label class="switch">
+                                  <input type="checkbox" checked>
+                                  <span class="slider round"></span>
+                                </label>
+                                <label for=""> User </label>
+                            </div>
+
+                        </div>
+                        <form>
+                            <br><br>
+                            <div class="input-container">
+                                <input type="#{type}" id="#{label}" required="required" />
+                                <label for="#{label}">Username</label>
+                                <div class="bar"></div>
+                            </div>
+                            <div class="input-container">
+                                <input type="#{type}" id="#{label}" required="required" />
+                                <label for="#{label}">Password</label>
+                                <div class="bar"></div>
+                            </div>
+                            <div class="button-container">
+                                <button><span><a href="./index.html">Login</a></span></button>
+                            </div>
+                            <div class="footer"><a href="#">Forgot your password?</a></div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <!-- End Breadcrumbs Section -->
+
+    </main>
+    <!-- End #main -->
+
+    <!-- ======= Footer ======= -->
+    <footer id="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-4 col-md-6">
+                        <div class="footer-info">
+                            <h3>pineapple</h3>
+                            <!-- <p class="pb-3"><em>Qui repudiandae et eum dolores alias sed ea. Qui suscipit veniam excepturi quod.</em></p> -->
+                            <p>
+                                <strong>Address:</strong> A108 Adam Street <br> New Mumbai 535022, Mahrashtra<br><br>
+                                <strong>Phone:</strong> +1 5589 55488 55<br>
+                                <strong>Email:</strong> info@example.com<br>
+                            </p>
+                            <div class="social-links mt-3">
+                                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-5 footer-links">
+                        <h4>Useful Links</h4>
+                        <div class="imp_links">
+                            <ul>
+                                <li><i class="bx bx-chevron-right"></i> <a href="#">International Holidays</a></li>
+                                <li><i class="bx bx-chevron-right"></i> <a href="#">Indian Holidays</a></li>
+                                <li><i class="bx bx-chevron-right"></i> <a href="#">Religious Packages</a></li>
+                                <li><i class="bx bx-chevron-right"></i> <a href="#">Passport</a></li>
+                                <li><i class="bx bx-chevron-right"></i> <a href="#">Travel Insurance</a></li>
+                            </ul>
+
+                            <ul>
+                                <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
+                                <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
+                                <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
+                                <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
+                                <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 footer-newsletter">
+                        <h4>Our Newsletter</h4>
+                        <p>Subscribe to get new updates</p>
+                        <form action="" method="post">
+                            <input type="email" name="email"><input type="submit" value="Subscribe">
+                        </form>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="copyright">
+                Copyright © 2021, All Right Reserved
+            </div>
+        </div>
+    </footer>
+    <!-- End Footer -->
+
+    <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+    <!-- <div id="preloader"></div> -->
+
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/jquery/jquery.min.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+    <script src="assets/vendor/venobox/venobox.min.js"></script>
+    <script src="assets/vendor/waypoints/jquery.waypoints.min.js"></script>
+    <script src="assets/vendor/counterup/counterup.min.js"></script>
+    <script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+    <script src="assets/vendor/aos/aos.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,1019 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>pineapple</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="assets/img/favicon.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="assets/vendor/venobox/venobox.css" rel="stylesheet">
+    <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="assets/css/style.css" rel="stylesheet">
+</head>
+<style>
+    .h2,
+    h2 {
+        font-size: 2rem;
+        color: #0f8fb3;
+    }
+    
+    section.section2 {
+        margin-top: 30px;
+    }
+    
+    .outer_div {
+        background: #1015a3;
+        padding: 3px 0 0 0;
+        width: 50%;
+        margin-top: 100px;
+        height: 80vh;
+    }
+    
+    .login-button-container {
+        margin: 15px -30px;
+    }
+    
+    .sign-in {
+        padding-left: 0;
+    }
+    
+    .register {
+        padding-right: 0;
+    }
+    
+    .sign-in__button,
+    .register__button {
+        background-color: #1015a3;
+        border: 1px solid black;
+        display: block;
+        min-height: 30px;
+        width: 100%;
+    }
+    
+    fieldset {
+        min-width: 0;
+        padding: 0;
+        margin: 0;
+        border: 0;
+        height: 50vh;
+    }
+    
+    .sign-in__button:hover,
+    .register__button:hover {
+        background: none;
+        border: 1px solid #ccc;
+        color: green;
+    }
+    
+    .sign-in__button:focus,
+    .sign-in__button.focus,
+    .register__button:focus,
+    .register__button.focus {
+        outline: none !important;
+    }
+    
+    .sign-in__button:active,
+    .sign-in__button.active,
+    .register__button:active,
+    .register__button.active {
+        background-color: #253184;
+        border: 1px solid #253184;
+        box-shadow: none;
+        color: #1015a3;
+    }
+    
+    .hidden_clip {
+        clip: rect(1px 1px 1px 1px);
+        clip: rect(1px, 1px, 1px, 1px);
+        position: absolute;
+    }
+    
+    .text-input__field {
+        border: 0;
+        display: block;
+        font-size: 16px;
+        height: 60px;
+        outline: 1px solid #ccc;
+        padding: 18px;
+        width: 100%;
+    }
+    
+    .text-input__field:focus,
+    .text-input__field.focus {
+        outline: 3px solid orange;
+    }
+    
+    .text-input__field:active,
+    .text-input__field.active {
+        outline: 1px solid black;
+    }
+    
+    .parent_div {
+        display: flex;
+        justify-content: space-evenly;
+        margin-top: 15px;
+    }
+    
+    button.btn.sign-in__button,
+    button.btn.register__button {
+        width: 200px;
+    }
+    
+    .field__input {
+        --uiFieldPlaceholderColor: var(--fieldPlaceholderColor, #1015a3);
+        background-color: transparent;
+        border-radius: 0;
+        border: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        font-family: inherit;
+        font-size: inherit;
+    }
+    
+    .field__input:focus::-webkit-input-placeholder {
+        color: var(--uiFieldPlaceholderColor);
+    }
+    
+    .field__input:focus::-moz-placeholder {
+        color: var(--uiFieldPlaceholderColor);
+    }
+    
+    .field {
+        --uiFieldBorderWidth: var(--fieldBorderWidth, 2px);
+        --uiFieldPaddingRight: var(--fieldPaddingRight, 1rem);
+        --uiFieldPaddingLeft: var(--fieldPaddingLeft, 1rem);
+        --uiFieldBorderColorActive: var(--fieldBorderColorActive, #1015a3);
+        display: var(--fieldDisplay, inline-flex);
+        position: relative;
+        font-size: var(--fieldFontSize, 1rem);
+        width: -webkit-fill-available;
+    }
+    
+    .field2 {
+        --uiFieldBorderWidth: var(--fieldBorderWidth, 2px);
+        --uiFieldPaddingRight: var(--fieldPaddingRight, 1rem);
+        --uiFieldPaddingLeft: var(--fieldPaddingLeft, 1rem);
+        --uiFieldBorderColorActive: var(--fieldBorderColorActive, #1015a3);
+        display: var(--fieldDisplay, inline-flex);
+        position: relative;
+        font-size: var(--fieldFontSize, 1rem);
+        width: 49.5%;
+        margin-top: 15px;
+    }
+    
+    .field3 {
+        --uiFieldBorderWidth: var(--fieldBorderWidth, 2px);
+        --uiFieldPaddingRight: var(--fieldPaddingRight, 1rem);
+        --uiFieldPaddingLeft: var(--fieldPaddingLeft, 1rem);
+        --uiFieldBorderColorActive: var(--fieldBorderColorActive, #1015a3);
+        display: var(--fieldDisplay, inline-flex);
+        position: relative;
+        font-size: var(--fieldFontSize, 1rem);
+        width: 30%;
+    }
+    
+    .field__input {
+        box-sizing: border-box;
+        width: var(--fieldWidth, 100%);
+        height: var(--fieldHeight, 3rem);
+        padding: var(--fieldPaddingTop, 1.25rem) var(--uiFieldPaddingRight) var(--fieldPaddingBottom, .5rem) var(--uiFieldPaddingLeft);
+        border-bottom: var(--uiFieldBorderWidth) solid #e2d8d8;
+        ;
+        margin-top: 10px;
+        color: #0d13a1;
+    }
+    
+    .field__input:focus {
+        outline: none;
+    }
+    
+    .field__input::-webkit-input-placeholder {
+        opacity: 0;
+        transition: opacity .2s ease-out;
+    }
+    
+    .field__input::-moz-placeholder {
+        opacity: 0;
+        transition: opacity .2s ease-out;
+    }
+    
+    .field__input:focus::-webkit-input-placeholder {
+        opacity: 1;
+        transition-delay: .2s;
+    }
+    
+    .field__input:focus::-moz-placeholder {
+        opacity: 1;
+        transition-delay: .2s;
+    }
+    
+    .field__label-wrap {
+        box-sizing: border-box;
+        pointer-events: none;
+        cursor: text;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    }
+    
+    .field__label-wrap::after {
+        content: "";
+        box-sizing: border-box;
+        width: 100%;
+        height: 0;
+        opacity: 0;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+    
+    .field__input:focus~.field__label-wrap::after {
+        opacity: 1;
+    }
+    
+    .field__label {
+        position: absolute;
+        left: var(--uiFieldPaddingLeft);
+        top: calc(50% - .5em);
+        line-height: 1;
+        font-size: var(--fieldHintFontSize, inherit);
+        transition: top .2s cubic-bezier(0.9, -0.15, 0.1, 1.15), opacity .2s ease-out, font-size .2s ease-out;
+        will-change: bottom, opacity, font-size;
+        color: #1015a3;
+    }
+    
+    .field__input:focus~.field__label-wrap .field__label,
+    .field__input:not(:placeholder-shown)~.field__label-wrap .field__label {
+        --fieldHintFontSize: var(--fieldHintFontSizeFocused, .75rem);
+        top: var(--fieldHintTopHover, .25rem);
+    }
+    
+    .field_v2 .field__label-wrap {
+        overflow: hidden;
+    }
+    
+    .field_v2 .field__label-wrap::after {
+        border-bottom: var(--uiFieldBorderWidth) solid var(--uiFieldBorderColorActive);
+        transform: translate3d(-105%, 0, 0);
+        will-change: transform, opacity;
+        transition: transform .285s ease-out .2s, opacity .2s ease-out .2s;
+    }
+    
+    .field_v2 .field__input:focus~.field__label-wrap::after {
+        transform: translate3d(0, 0, 0);
+        transition-delay: 0;
+    }
+    
+    span.field_inline {
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .form-control {
+        display: block;
+        width: 70%;
+        margin-right: 38px;
+        padding: .375rem;
+        font-size: 1rem;
+        line-height: 1.5;
+        color: #495057;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid #ced4da;
+        border-radius: .25rem;
+        transition: border-color .15s ease-in-out, box-shadow .15s;
+        margin-top: 15px;
+    }
+    
+    .form-control2 {
+        display: block;
+        width: 50%;
+        margin-right: 38px;
+        padding: .375rem;
+        font-size: 1rem;
+        line-height: 1.5;
+        outline: none;
+        color: #495057;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid #ced4da;
+        border-radius: .25rem;
+        transition: border-color .15s ease-in-out, box-shadow .15s;
+        margin-top: 15px;
+    }
+    
+    .form-control:focus {
+        color: #495057;
+        background-color: #fff;
+        border: none;
+        outline: 0;
+        box-shadow: none;
+    }
+    
+    button.btn.sign-in__button,
+    button.btn.register__button {
+        font-weight: 600;
+    }
+    
+    .sign-in__button:hover,
+    .register__button:hover {
+        background: #253184;
+        border: none;
+        color: #1015a3;
+    }
+    
+    .background_form {
+        background: #ff000000;
+    }
+    
+    .footer-widget-heading2 h3::before {
+        content: "";
+        position: absolute;
+        left: 75px;
+        bottom: -15px;
+        height: 2px;
+        width: 50px;
+        background: #1015a3;
+    }
+    
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Open Sans, Ubuntu, Fira Sans, Helvetica Neue, sans-serif;
+        margin: 0;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .btn.focus,
+    .btn:focus {
+        outline: 0;
+        box-shadow: none;
+    }
+    /* new code */
+    
+    .banner_flight_search {
+        margin: 15px 0;
+    }
+    
+    .search_box {
+        background: white;
+        padding: 30px;
+    }
+    
+    button:focus,
+    button:hover,
+    .active_item {
+        outline: none !important;
+        background: #1acc8d !important;
+        color: #ffffff !important;
+    }
+    
+    .search_btn {
+        display: flex;
+        justify-content: space-evenly;
+    }
+    
+    .search_box {
+        background: white;
+        padding: 30px;
+        width: 42vw;
+        border-radius: 10px;
+    }
+    
+    .btn-primary:hover {
+        color: #fff;
+        border-color: #1acc8d;
+    }
+    
+    .search_btn button {
+        width: 150px;
+        height: 45px;
+        border-radius: 20px;
+        background: white;
+        color: #1acc8d;
+        box-shadow: 0 0px 7px #e8e7e742;
+        border: 1px solid #1acc8d;
+    }
+    
+    .btn-primary {
+        color: #1acc8d !important;
+        background-color: #ffffff !important;
+        width: 150px;
+        height: 45px;
+        font-weight: 600;
+        border: 1px solid #1acc8d;
+        border-radius: 20px;
+    }
+    
+    .align_btn {
+        justify-content: center;
+        display: flex;
+    }
+    
+    .align_text {
+        display: flex;
+    }
+</style>
+
+<body>
+
+    <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top d-flex align-items-center header-transparent">
+        <div class="container d-flex align-items-center">
+
+            <div class="logo mr-auto">
+                <h1 class="text-light"><a href="index.html"><span>pineapple</span></a></h1>
+                <!-- Uncomment below if you prefer to use an image logo -->
+                <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+            </div>
+
+            <nav class="nav-menu d-none d-lg-block">
+                <ul>
+                    <li class="active"><a href="index.html">Flight</a></li>
+                    <li><a href="#">Hotel</a></li>
+                    <li><a href="#">Holidays</a></li>
+                    <li><a href="#">Car</a></li>
+                    <!-- <li><a href="#">Team</a></li>
+                    <li><a href="#">Pricing</a></li> -->
+                    <li class="drop-down"><a href="">More</a>
+                        <ul>
+                            <li><a href="#">Drop Down 1</a></li>
+                            <li class="drop-down"><a href="#">Drop Down 2</a>
+                                <ul>
+                                    <li><a href="#">Deep Drop Down 1</a></li>
+                                    <li><a href="#">Deep Drop Down 2</a></li>
+                                    <li><a href="#">Deep Drop Down 3</a></li>
+                                    <li><a href="#">Deep Drop Down 4</a></li>
+                                    <li><a href="#">Deep Drop Down 5</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Drop Down 3</a></li>
+                            <li><a href="#">Drop Down 4</a></li>
+                            <li><a href="#">Drop Down 5</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Support</a></li>
+                    <li>
+                        <a href="#"></a>
+                    </li>
+                    <button class="logout" type="submit" value="Logout"><a style="margin-left: -20px;" href="./login.html">Logout</a> </button>
+                </ul>
+
+            </nav>
+            <!-- .nav-menu -->
+
+        </div>
+    </header>
+    <!-- End Header -->
+
+    <!-- ======= Hero Section ======= -->
+    <section id="hero">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 pt-5 pt-lg-0 order-2 order-lg-1 d-flex align-items-center">
+                    <div data-aos="zoom-out">
+
+                        <div class="search_box">
+                            <div class="search_btn">
+                                <button class="button1 active_item oneway">one way</button>
+                                <button class="button2 round">round trip</button>
+                                <button class="button3 multi">multi city</button>
+                            </div>
+                            <!-- item 1 -->
+                            <div class="banner_flight_search item1 icon-box" data-aos="zoom-in" data-aos-delay="200">
+                                <label class="field field_v2">
+                                    <input class="field__input" placeholder="e.g. Mumbai">
+                                    <span class="field__label-wrap">
+                                      <span class="field__label">Flying From</span>
+                                    </span>
+                                  </label>
+                                <br>
+                                <label class="field field_v2">
+                                      <input class="field__input" placeholder="e.g. Delhi">
+                                      <span class="field__label-wrap">
+                                        <span class="field__label">Flying To</span>
+                                      </span>
+                                    </label>
+                                <label class="field2 field_v2" style="width: 100%;">
+                                      <input type="date" class="field__input" placeholder="e.g. Mumbai" style="text-transform: lowercase;">
+                                      <span class="field__label-wrap">
+                                        <span class="field__label">Departure Date</span>
+                                      </span>
+                                    </label>
+                                <!-- <label class="field2 field_v2">
+                                        <input type="date" class="field__input" placeholder="e.g. Delhi" style="text-transform: lowercase;">
+                                        <span class="field__label-wrap">
+                                          <span class="field__label">Return Date</span>
+                                        </span>
+                                      </label> -->
+                                <br>
+                                <span class="field_inline">
+                                      <label class="field3 field_v2">
+                                          <input type="number" min="0"  max="10" value="0" class="field__input" placeholder="Number of Adults">
+                                          <span class="field__label-wrap">
+                                            <span class="field__label">Adults (12+ Yrs)</span>
+                                </span>
+                                </label>
+                                <label class="field3 field_v2">
+                                          <input type="number" min="0"  max="5" value="0" class="field__input" placeholder="Number of Children">
+                                          <span class="field__label-wrap">
+                                            <span class="field__label">Children (2 - 12 Yrs)</span>
+                                          </span>
+                                  </label>
+                                <label class="field3 field_v2">
+                                          <input type="number" min="0"  max="2" value="0" class="field__input" placeholder="Number of Infant">
+                                          <span class="field__label-wrap">
+                                            <span class="field__label">Infant (0 - 24 Month)</span>
+                                          </span>
+                                  </label>
+                                </span>
+                                <div class="align_text">
+                                    <select class="form-control2">
+                                        <option value="Economy">Economy class</option>
+                                        <option value="Business">Business class</option>
+                                        <option value="First">First class</option>
+                                    </select>
+                                </div>
+                                <br>
+                                <div class="align_btn">
+                                    <button class="btn btn-primary" type="submit">Search Flights</button>
+                                </div>
+                            </div>
+                            <!-- item 2 -->
+                            <div class="banner_flight_search item2 icon-box" data-aos="zoom-in" data-aos-delay="200">
+                                <label class="field field_v2">
+                                    <input class="field__input" placeholder="e.g. Mumbai">
+                                    <span class="field__label-wrap">
+                                      <span class="field__label">Flying From</span>
+                                    </span>
+                                  </label>
+                                <br>
+                                <label class="field field_v2">
+                                      <input class="field__input" placeholder="e.g. Delhi">
+                                      <span class="field__label-wrap">
+                                        <span class="field__label">Flying To</span>
+                                      </span>
+                                    </label>
+                                <label class="field2 field_v2">
+                                      <input type="date" class="field__input" placeholder="e.g. Mumbai" style="text-transform: lowercase;">
+                                      <span class="field__label-wrap">
+                                        <span class="field__label">Departure Date</span>
+                                      </span>
+                                    </label>
+                                <label class="field2 field_v2">
+                                        <input type="date" class="field__input" placeholder="e.g. Delhi" style="text-transform: lowercase;">
+                                        <span class="field__label-wrap">
+                                          <span class="field__label">Return Date</span>
+                                        </span>
+                                      </label>
+                                <span class="field_inline">
+                                      <label class="field3 field_v2">
+                                          <input type="number" min="0"  max="10" value="0" class="field__input" placeholder="Number of Adults">
+                                          <span class="field__label-wrap">
+                                            <span class="field__label">Adults (12+ Yrs)</span>
+                                </span>
+                                </label>
+                                <label class="field3 field_v2">
+                                          <input type="number" min="0"  max="5" value="0" class="field__input" placeholder="Number of Children">
+                                          <span class="field__label-wrap">
+                                            <span class="field__label">Children (2 - 12 Yrs)</span>
+                                          </span>
+                                  </label>
+                                <label class="field3 field_v2">
+                                          <input type="number" min="0"  max="2" value="0" class="field__input" placeholder="Number of Infant">
+                                          <span class="field__label-wrap">
+                                            <span class="field__label">Infant (0 - 24 Month)</span>
+                                          </span>
+                                  </label>
+                                </span>
+                                <div class="align_text">
+                                    <select class="form-control2">
+                                        <option value="Economy">Economy class</option>
+                                        <option value="Business">Business class</option>
+                                        <option value="First">First class</option>
+                                    </select>
+                                </div>
+                                <br>
+                                <div class="align_btn">
+                                    <button class="btn btn-primary" type="submit">Search Flights</button>
+                                </div>
+                            </div>
+                            <!-- item 3 -->
+                            <div class="banner_flight_search item3 icon-box" data-aos="zoom-in" data-aos-delay="200">
+                                <label class="field field_v2">
+                                    <input class="field__input" placeholder="e.g. Mumbai">
+                                    <span class="field__label-wrap">
+                                      <span class="field__label">Flying From</span>
+                                    </span>
+                                  </label>
+                                <br>
+                                <label class="field field_v2">
+                                      <input class="field__input" placeholder="e.g. Delhi">
+                                      <span class="field__label-wrap">
+                                        <span class="field__label">Flying To</span>
+                                      </span>
+                                    </label>
+                                <label class="field2 field_v2">
+                                      <input type="date" class="field__input" placeholder="e.g. Mumbai" style="text-transform: lowercase;">
+                                      <span class="field__label-wrap">
+                                        <span class="field__label">Departure Date</span>
+                                      </span>
+                                    </label>
+                                <label class="field2 field_v2">
+                                        <input type="date" class="field__input" placeholder="e.g. Delhi" style="text-transform: lowercase;">
+                                        <span class="field__label-wrap">
+                                          <span class="field__label">Return Date</span>
+                                        </span>
+                                      </label>
+                                <span class="field_inline">
+                                      <label class="field3 field_v2">
+                                          <input type="number" min="0"  max="10" value="0" class="field__input" placeholder="Number of Adults">
+                                          <span class="field__label-wrap">
+                                            <span class="field__label">Adults (12+ Yrs)</span>
+                                </span>
+                                </label>
+                                <label class="field3 field_v2">
+                                          <input type="number" min="0"  max="5" value="0" class="field__input" placeholder="Number of Children">
+                                          <span class="field__label-wrap">
+                                            <span class="field__label">Children (2 - 12 Yrs)</span>
+                                          </span>
+                                  </label>
+                                <label class="field3 field_v2">
+                                          <input type="number" min="0"  max="2" value="0" class="field__input" placeholder="Number of Infant">
+                                          <span class="field__label-wrap">
+                                            <span class="field__label">Infant (0 - 24 Month)</span>
+                                          </span>
+                                  </label>
+                                </span>
+                                <div class="align_text">
+                                    <select class="form-control">
+                                        <option value="Economy">Economy class</option>
+                                        <option value="Business">Business class</option>
+                                        <option value="First">First class</option>
+                                    </select>
+                                    <label class="field field_v2">
+                                        <input class="field__input" placeholder="e.g. Air India">
+                                        <span class="field__label-wrap">
+                                          <span class="field__label">Preferred Airline</span>
+                                        </span>
+                                      </label>
+                                </div>
+                                <br>
+                                <div class="align_btn">
+                                    <button class="btn btn-primary" type="submit">Search Flights</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 order-1 order-lg-2 hero-img" data-aos="zoom-out" data-aos-delay="300">
+                    <img src="assets/img/hero-img.png" class="img-fluid animated" alt="">
+                </div>
+            </div>
+        </div>
+
+        <svg class="hero-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28 " preserveAspectRatio="none">
+      <defs>
+        <path id="wave-path" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z">
+      </defs>
+      <g class="wave1">
+        <use xlink:href="#wave-path" x="50" y="3" fill="rgba(255,255,255, .1)">
+      </g>
+      <g class="wave2">
+        <use xlink:href="#wave-path" x="50" y="0" fill="rgba(255,255,255, .2)">
+      </g>
+      <g class="wave3">
+        <use xlink:href="#wave-path" x="50" y="9" fill="#fff">
+      </g>
+    </svg>
+
+    </section>
+    <!-- End Hero -->
+
+    <main id="main">
+
+        <!-- ======= About Section ======= -->
+        <section id="about" class="about">
+            <div class="container-fluid">
+
+                <div class="container">
+                    <div class="section-title" data-aos="fade-up">
+                        <h2>Services</h2>
+                        <p>Check The Services</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-xl-7 col-lg-8 video-box d-flex justify-content-center align-items-stretch" data-aos="fade-right">
+                        <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="venobox play-btn mb-4" data-vbtype="video" data-autoplay="true"></a>
+                    </div>
+
+                    <div class="col-xl-5 col-lg-4 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5" data-aos="fade-left">
+                        <!-- <h3>Enim quis est voluptatibus aliquid consequatur fugiat</h3>
+                        <p>Esse voluptas cumque vel exercitationem. Reiciendis est hic accusamus. Non ipsam et sed minima temporibus laudantium. Soluta voluptate sed facere corporis dolores excepturi. Libero laboriosam sint et id nulla tenetur. Suscipit
+                            aut voluptate.</p> -->
+
+                        <div class="icon-box" data-aos="zoom-in" data-aos-delay="100">
+                            <div class="icon"><img src="./assets/img/icons/1.png" alt="plane"></div>
+                            <h4 class="title"><a href="">Flight</a></h4>
+                            <!-- <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p> -->
+                        </div>
+
+                        <div class="icon-box" data-aos="zoom-in" data-aos-delay="200">
+                            <div class="icon"><img src="./assets/img/icons/2.png" alt="hotel"></div>
+                            <h4 class="title"><a href="">Hotel</a></h4>
+                            <!-- <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque</p> -->
+                        </div>
+
+                        <div class="icon-box" data-aos="zoom-in" data-aos-delay="300">
+                            <div class="icon"><img src="./assets/img/icons/3.png" alt="holidays"></div>
+                            <h4 class="title"><a href="">Holidays</a></h4>
+                            <!-- <p class="description">Explicabo est voluptatum asperiores consequatur magnam. Et veritatis odit. Sunt aut deserunt minus aut eligendi omnis</p> -->
+                        </div>
+                        <div class="icon-box" data-aos="zoom-in" data-aos-delay="300">
+                            <div class="icon"><img src="./assets/img/icons/4.png" alt="car"></div>
+                            <h4 class="title"><a href="">cars</a></h4>
+                            <!-- <p class="description">Explicabo est voluptatum asperiores consequatur magnam. Et veritatis odit. Sunt aut deserunt minus aut eligendi omnis</p> -->
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <!-- End About Section -->
+
+
+        <!-- ======= Testimonials Section ======= -->
+        <section>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="section-title" data-aos="fade-up">
+                            <h2>Important notice</h2>
+                            <p>Check The Important notice </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonials" class="testimonials">
+
+            <div class="container">
+                <div class="owl-carousel testimonials-carousel" data-aos="zoom-in">
+
+                    <div class="testimonial-item">
+                        <!-- <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
+                        <h3>Saul Goodman</h3>
+                        <h4>Ceo &amp; Founder</h4> -->
+                        <p>
+                            <i class="bx bxs-quote-alt-left quote-icon-left"></i> Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus
+                            at semper.
+                            <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                        </p>
+                    </div>
+
+                    <div class="testimonial-item">
+                        <!-- <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
+                        <h3>Sara Wilsson</h3>
+                        <h4>Designer</h4> -->
+                        <p>
+                            <i class="bx bxs-quote-alt-left quote-icon-left"></i> Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam
+                            anim culpa.
+                            <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                        </p>
+                    </div>
+
+                    <div class="testimonial-item">
+                        <!-- <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
+                        <h3>Jena Karlis</h3>
+                        <h4>Store Owner</h4> -->
+                        <p>
+                            <i class="bx bxs-quote-alt-left quote-icon-left"></i> Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
+                            <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                        </p>
+                    </div>
+
+                    <div class="testimonial-item">
+                        <!-- <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
+                        <h3>Matt Brandon</h3>
+                        <h4>Freelancer</h4> -->
+                        <p>
+                            <i class="bx bxs-quote-alt-left quote-icon-left"></i> Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore
+                            labore illum veniam.
+                            <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                        </p>
+                    </div>
+
+                    <div class="testimonial-item">
+                        <!-- <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
+                        <h3>John Larson</h3>
+                        <h4>Entrepreneur</h4> -->
+                        <p>
+                            <i class="bx bxs-quote-alt-left quote-icon-left"></i> Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam
+                            culpa fore nisi cillum quid.
+                            <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+        <!-- End Testimonials Section -->
+
+        <!-- ======= Contact Section ======= -->
+        <section id="contact" class="contact">
+            <div class="container">
+
+                <div class="section-title" data-aos="fade-up">
+                    <h2>Contact</h2>
+                    <p>Contact Us</p>
+                </div>
+
+                <div class="row">
+
+                    <div class="col-lg-4" style="margin-top: 40px;" data-aos="fade-right" data-aos-delay="100">
+                        <div class="info">
+                            <div class="address">
+                                <i class="icofont-google-map"></i>
+                                <h4>Location:</h4>
+                                <p>demo address</p>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div class="col-lg-4" data-aos="fade-right" data-aos-delay="100">
+                        <div class="info">
+
+                            <div class="email">
+                                <i class="icofont-envelope"></i>
+                                <h4>Email:</h4>
+                                <p>info@example.com</p>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-lg-4" data-aos="fade-right" data-aos-delay="100">
+                        <div class="info">
+                            <div class="phone">
+                                <i class="icofont-phone"></i>
+                                <h4>Call:</h4>
+                                <p>+00 00000 00000</p>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+        <!-- End Contact Section -->
+
+    </main>
+    <!-- End #main -->
+
+    <!-- ======= Footer ======= -->
+    <footer id="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-4 col-md-6">
+                        <div class="footer-info">
+                            <h3>pineapple</h3>
+                            <!-- <p class="pb-3"><em>Qui repudiandae et eum dolores alias sed ea. Qui suscipit veniam excepturi quod.</em></p> -->
+                            <p>
+                                <strong>Address:</strong> A108 Adam Street <br> New Mumbai 535022, Mahrashtra<br><br>
+                                <strong>Phone:</strong> +1 5589 55488 55<br>
+                                <strong>Email:</strong> info@example.com<br>
+                            </p>
+                            <div class="social-links mt-3">
+                                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-5 footer-links">
+                        <h4>Useful Links</h4>
+                        <div class="imp_links">
+                            <ul>
+                                <li><i class="bx bx-chevron-right"></i> <a href="#">International Holidays</a></li>
+                                <li><i class="bx bx-chevron-right"></i> <a href="#">Indian Holidays</a></li>
+                                <li><i class="bx bx-chevron-right"></i> <a href="#">Religious Packages</a></li>
+                                <li><i class="bx bx-chevron-right"></i> <a href="#">Passport</a></li>
+                                <li><i class="bx bx-chevron-right"></i> <a href="#">Travel Insurance</a></li>
+                            </ul>
+
+                            <ul>
+                                <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
+                                <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
+                                <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
+                                <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
+                                <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 footer-newsletter">
+                        <h4>Our Newsletter</h4>
+                        <p>Subscribe to get new updates</p>
+                        <form action="" method="post">
+                            <input type="email" name="email"><input type="submit" value="Subscribe">
+                        </form>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="copyright">
+                Copyright © 2021, All Right Reserved
+            </div>
+        </div>
+    </footer>
+    <!-- End Footer -->
+
+    <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+    <!-- <div id="preloader"></div> -->
+
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/jquery/jquery.min.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+    <script src="assets/vendor/venobox/venobox.min.js"></script>
+    <script src="assets/vendor/waypoints/jquery.waypoints.min.js"></script>
+    <script src="assets/vendor/counterup/counterup.min.js"></script>
+    <script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+    <script src="assets/vendor/aos/aos.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="assets/js/main.js"></script>
+    <script>
+        // select form 
+        $('.item2').hide();
+        $('.item3').hide();
+
+        $('.button1').click(function(e) {
+            e.preventDefault();
+            $(this).addClass('active_item').css('background', '#0a78b9');
+            $('.button2').removeClass('active_item').css('background', 'white');
+            $('.button3').removeClass('active_item').css('background', 'white');
+            $('.item1').show();
+            $('.item2').hide();
+            $('.item3').hide();
+        });
+
+        $('.button2').click(function(e) {
+            e.preventDefault();
+            $(this).addClass('active_item').css('background', '#0a78b9');
+            $('.button3').removeClass('active_item').css('background', 'white');
+            $('.button1').removeClass('active_item').css('background', 'white');
+            $('.item2').show();
+            $('.item1').hide();
+            $('.item3').hide();
+        });
+        $('.button3').click(function(e) {
+            e.preventDefault();
+            $(this).addClass('active_item').css('background', '#0a78b9');
+            $('.button2').removeClass('active_item').css('background', 'white');
+            $('.button1').removeClass('active_item').css('background', 'white');
+            $('.item3').show();
+            $('.item1').hide();
+            $('.item2').hide();
+        });
+    </script>
+</body>
+
+</html>
