@@ -20,7 +20,7 @@ a {
 }
 
 a:hover {
-    color: #34e5a6;
+    color: #0056b3;
     text-decoration: none;
 }
 
@@ -304,7 +304,6 @@ h6 {
 .logout,
 .logout:hover {
     bottom: 0;
-    border: 0;
     height: 40px;
     width: 150px;
     font-size: 16px;
@@ -312,6 +311,7 @@ h6 {
     background: #ffffff !important;
     transition: 0.3s;
     border-radius: 50px;
+    border: 1px solid white !important;
 }
 
 button.logout a,
@@ -387,7 +387,6 @@ button.logout a:hover {
 .mobile-nav a:hover,
 .mobile-nav .active>a,
 .mobile-nav li:hover>a {
-    color: ;
     text-decoration: none;
 }
 
@@ -1706,7 +1705,7 @@ section {
 
 #footer .footer-top .footer-links ul i {
     padding-right: 2px;
-    color: #61ebba;
+    color: white;
     font-size: 18px;
     line-height: 1;
 }
